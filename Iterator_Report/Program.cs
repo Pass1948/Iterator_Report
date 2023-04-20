@@ -46,6 +46,35 @@
             {
                 Console.WriteLine(i);
             }
+
+            // Sort로 배열또는 리스트를 정렬하고 싶다면 매개변수에 IList<T>넣어서 사용하면 출력때 어느걸 사용하건 정령이 가능하게 된다
+            // IList는 배열기반의 자료구조들을 다 담가고있음
+
         }
+
+        // 밑에 있는 함수 두개는 c#기본으로 구현되어있음
+        // 열거가능한 어떠한 자료구조든 평균값을 구할수있게 함수 구현
+        public static double Average(IEnumerable<int> list) 
+        {
+            double sum = 0;
+            int count = 0;
+            foreach (int i in list)
+            {
+                sum += i;
+                count++;
+            }
+            return sum / count;
+        }
+
+        // 어떠한 자료구조든 평균값을 구할수있게 함수 구현
+        public static double Average(ICollection<int> list) 
+        {
+            double sum = 0;
+            foreach (int i in list)
+            {
+                sum += i;
+            }
+            return sum / list.Count;
+        } 
     }
 }
