@@ -69,6 +69,7 @@ namespace Iterator_Report
             {
                 newNode.next = head;
                 head.prev = newNode;
+                head = newNode;
             }
             else                      
             {
@@ -88,6 +89,7 @@ namespace Iterator_Report
             {
                 newNode.prev = tail;
                 tail.next = newNode;
+                tail = newNode;
             }
             else                       
             {
@@ -97,45 +99,6 @@ namespace Iterator_Report
             count++;
             return newNode;
         }
-
-        public LinkedListNode<T> AddBefore(LinkedListNode<T> node, T value)
-        {
-            if (node.list != this)  
-                throw new InvalidOperationException();
-            if (node == null)
-                throw new ArgumentNullException();
-
-            LinkedListNode<T> newNode = new LinkedListNode<T>(this, value);
-            newNode.next = node;
-            newNode.prev = node.prev;
-            node.prev = newNode;
-            if (node.prev != null)
-                node.prev.next = newNode;
-            else
-                head = newNode;
-            count++;
-            return newNode;
-        }
-        
-        public LinkedListNode<T> AddAfter(LinkedListNode<T> node, T value)
-        {
-            if (node.list != this)  
-                throw new InvalidOperationException();
-            if (node == null)
-                throw new ArgumentNullException();
-
-            LinkedListNode<T> newNode = new LinkedListNode<T>(this, value);
-            newNode.prev = node;
-            newNode.next = node.next;
-            node.next = newNode;
-            if (node.next != null)
-                node.next.prev = newNode;
-            else
-                tail = newNode;
-            count++;
-            return newNode;
-        }
-
         //====================================================
         public IEnumerator<T> GetEnumerator()
         {

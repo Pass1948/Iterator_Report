@@ -7,12 +7,13 @@
             List<int> list = new List<int>();
             LinkedList<int> linkedList = new LinkedList<int>();
 
-            for(int i = 0; i < 5; i++)
+            for(int i = 1; i <= 5; i++)
             {
                 list.Add(i);
             }
 
-            for (int i = 0; i <= 5; i++)
+          
+            for (int i = 1; i <= 5; i++)
             {
                 linkedList.AddLast(i);      // 데이터가 데이터의 뒤로 붙에 설정
             }
