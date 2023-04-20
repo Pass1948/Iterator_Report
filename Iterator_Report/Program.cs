@@ -54,7 +54,7 @@
 
         // 밑에 있는 함수 두개는 c#기본으로 구현되어있음
         // 열거가능한 어떠한 자료구조든 평균값을 구할수있게 함수 구현
-        public static double Average(IEnumerable<int> list) 
+        public static double Average(IEnumerable<int> list)
         {
             double sum = 0;
             int count = 0;
@@ -67,7 +67,7 @@
         }
 
         // 어떠한 자료구조든 평균값을 구할수있게 함수 구현
-        public static double Average(ICollection<int> list) 
+        public static double Average(ICollection<int> list)
         {
             double sum = 0;
             foreach (int i in list)
@@ -75,6 +75,6 @@
                 sum += i;
             }
             return sum / list.Count;
-        } 
+        }
     }
 }
